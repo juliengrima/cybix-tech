@@ -18,4 +18,9 @@ AppBundle\Entity\Sites:
         description:
             type: text
             nullable: true
+
+    oneToOne:
+        media:
+            targetEntity: AppBundle/Entity/media
+            cascade: ['all']
     lifecycleCallbacks: {  }

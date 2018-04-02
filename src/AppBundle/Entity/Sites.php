@@ -27,6 +27,10 @@ class Sites
      */
     private $description;
 
+    /**
+     * @var \AppBundle\Entity\media
+     */
+    private $media;
 
     /**
      * Get id
@@ -108,5 +112,29 @@ class Sites
     public function getDescription()
     {
         return $this->description;
+    }
+
+    /**
+     * Set media
+     *
+     * @param \AppBundle\Entity\media $media
+     *
+     * @return Sites
+     */
+    public function setMedia(\AppBundle\Entity\media $media = null)
+    {
+        $this->media = $media;
+
+        return $this;
+    }
+
+    /**
+     * Get media
+     *
+     * @return \AppBundle\Entity\media
+     */
+    public function getMedia()
+    {
+        return $this->media;
     }
 }

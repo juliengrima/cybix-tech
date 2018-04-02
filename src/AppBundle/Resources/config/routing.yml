@@ -1,9 +1,9 @@
 app_media:
     resource: "@AppBundle/Resources/config/routing/media.yml"
-    prefix:   /media
+    prefix:   /admin/media
 
 app_sites:
     resource: "@AppBundle/Resources/config/routing/sites.yml"
-    prefix:   /sites
+    prefix:   /admin/sites
 
 
