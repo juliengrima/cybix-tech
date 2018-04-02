@@ -52,4 +52,3 @@ class Media
         return $this->name;
     }
 }
-
