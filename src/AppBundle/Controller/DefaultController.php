@@ -19,6 +19,12 @@ class DefaultController extends Controller
         ]);
     }
 
+    public function contactAction()
+    {
+        // replace this example code with whatever you need
+        return $this->render('default/indexWorking.html.twig');
+    }
+
 }
 
 
