@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'layout.html.twig' %}
 
 {% block stylesheets %}
     <style>
@@ -7,19 +7,6 @@
 {% endblock %}
 
 {% block body %}
-
-    <!-- Header -->
-    <header id="header">
-        <div class="content">
-            <h1><span class="span-logo">$Cybix_Technology</span><span class="span-logo-close">;</span></h1>
-            <p>Agence web <br />
-                particuliers et petites entreprises</p>
-            <ul class="actions">
-                <li><a href="#one" class="button icon fa-chevron-down scrolly">Voir plus</a></li>
-            </ul>
-        </div>
-        <div class="image phone"><div class="inner"><img src="{{ asset('assets/images/local/codage_php.png') }}" alt="code php" class="logo-size"/></div></div>
-    </header>
 
     <!-- One -->
     <section id="one" class="wrapper style2 special">
@@ -30,6 +17,7 @@
             <li>Rendez-vous à domicile</li>
             <li>Applications web sur mesure</li>
             <li>A l'écoute du client</li>
+            <li><a href="">Nous contacter</a></li>
         </ul>
     </section>
 
@@ -40,15 +28,21 @@
 
             {# AFFICHAGE BOUCLE #}
 
-    {% for i in 0..0 %}
-            <div class="spotlight">
-                <div class="image"><img src="{{ asset('assets/images/pic01.jpg') }}" alt="" /></div>
-                <div class="content">
-                    <h3>TITRE 1</h3>
-                    <p>Morbi mattis ornare ornare. Duis quam turpis, gravida at leo elementum elit fusce accumsan dui libero, quis vehicula lectus ultricies eu. In convallis amet leo non sapien iaculis efficitur consequat lorem ipsum.</p>
+            {% for site in sites %}
+
+                <div class="spotlight">
+                    <a href="{{site.address }}">
+                        <div class="image"><img src="{{ asset(site.media.path) }}" alt="{{ site.media.name }}" /></div>
+                    </a>
+                    <a href="{{site.address }}">
+                        <div class="content">
+                            <h3>{{ site.name }}</h3>
+                            <p>{{ site.description }}</p>
+                        </div>
+                    </a>
                 </div>
-            </div>
-    {% endfor %}
+
+            {% endfor %}
 
             {# FIN DE BOUCLE#}
 
@@ -63,15 +57,6 @@
             </section>
         </div>
     </section>
-
-    <footer id="footer">
-        <ul class="icons">
-            <li><a href="https://www.facebook.com/CybixTechnology/" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-            {#<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>#}
-            {#<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>#}
-        </ul>
-        <p class="copyright">&copy; Untitled. Credits: <a href="http://html5up.net">HTML5 UP</a></p>
-    </footer>
 
 {% endblock %}
 
