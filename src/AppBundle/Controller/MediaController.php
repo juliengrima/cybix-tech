@@ -34,7 +34,7 @@ class MediaController extends Controller
     public function newAction(Request $request)
     {
         $medium = new Medium();
-        $form = $this->createForm('AppBundle\Form\MediaType', $medium);
+        $form = $this->createForm('AppBundle\Form\Media', $medium);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -72,7 +72,7 @@ class MediaController extends Controller
     public function editAction(Request $request, Media $medium)
     {
         $deleteForm = $this->createDeleteForm($medium);
-        $editForm = $this->createForm('AppBundle\Form\MediaType', $medium);
+        $editForm = $this->createForm('AppBundle\Form\Media', $medium);
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {

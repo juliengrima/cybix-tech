@@ -10,3 +10,14 @@
     width: 150px;
     height: 350px;
 }
+
+.plus-icon{
+
+    width: 45px;
+    height: 45px;
+    vertical-align: top;
+}
+
+.horizontal-center{
+    margin-left: 50%;
+}

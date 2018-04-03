@@ -7,6 +7,27 @@ namespace AppBundle\Entity;
  */
 class Media
 {
+
+    // Variable temporaire pour upload de fichier
+    private $file;
+
+    public function getFile()
+    {
+        return $this->file;
+    }
+
+    public function setFile($picture)
+    {
+        $this->file = $picture;
+        return $this;
+    }
+
+
+    function __toString()
+    {
+        return $this->getName() . " | " . $this->getPath();
+    }
+
     /**
      * @var int
      */
@@ -17,6 +38,10 @@ class Media
      */
     private $name;
 
+    /**
+     * @var string
+     */
+    private $path;
 
     /**
      * Get id
@@ -50,5 +75,29 @@ class Media
     public function getName()
     {
         return $this->name;
+    }
+
+    /**
+     * Set path
+     *
+     * @param string $path
+     *
+     * @return Media
+     */
+    public function setPath($path)
+    {
+        $this->path = $path;
+
+        return $this;
+    }
+
+    /**
+     * Get path
+     *
+     * @return string
+     */
+    public function getPath()
+    {
+        return $this->path;
     }
 }

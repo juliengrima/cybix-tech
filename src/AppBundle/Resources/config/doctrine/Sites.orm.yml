@@ -21,6 +21,6 @@ AppBundle\Entity\Sites:
 
     oneToOne:
         media:
-            targetEntity: AppBundle\Entity\media
+            targetEntity: AppBundle\Entity\Media
             cascade: ['all']
     lifecycleCallbacks: {  }

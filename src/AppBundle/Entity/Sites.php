@@ -28,7 +28,7 @@ class Sites
     private $description;
 
     /**
-     * @var \AppBundle\Entity\media
+     * @var \AppBundle\Entity\Media
      */
     private $media;
 
@@ -117,11 +117,11 @@ class Sites
     /**
      * Set media
      *
-     * @param \AppBundle\Entity\media $media
+     * @param \AppBundle\Entity\Media $media
      *
      * @return Sites
      */
-    public function setMedia(\AppBundle\Entity\media $media = null)
+    public function setMedia(\AppBundle\Entity\Media $media = null)
     {
         $this->media = $media;
 
@@ -131,7 +131,7 @@ class Sites
     /**
      * Get media
      *
-     * @return \AppBundle\Entity\media
+     * @return \AppBundle\Entity\Media
      */
     public function getMedia()
     {

@@ -3,6 +3,7 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\Sites;
+use AppBundle\Form\SitesType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -33,11 +34,27 @@ class SitesController extends Controller
      */
     public function newAction(Request $request)
     {
-        $site = new Site();
+        $site = new Sites();
         $form = $this->createForm('AppBundle\Form\SitesType', $site);
+        $form->setData ($site);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            /* ON RECUP LE FICHIER IMAGE */
+            $imageForm = $form->get ('media');
+            $image = $imageForm->getData ();
+            $site->setMedia ($image);
+
+            if (isset($image)) {
+
+                /* ON DEFINI UN NOM UNIQUE AU FICHIER UPLOAD : LE PREG_REPLACE PERMET LA SUPPRESSION DES ESPACES ET AUTRES CARACTERES INDESIRABLES*/
+                $image->setName (preg_replace ('/\W/', '_', "Object_" . uniqid ()));
+
+                // On appelle le service d'upload de média (AppBundle/Services/mediaInterface)
+                $this->get ('media.interface')->mediaUpload ($image);
+            }
+
             $em = $this->getDoctrine()->getManager();
             $em->persist($site);
             $em->flush();
