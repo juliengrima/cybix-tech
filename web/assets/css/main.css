@@ -2783,8 +2783,12 @@
 			}
 
 		.spotlight .content {
-			width: 70%;
+			width: 60%;
 		}
+
+        .spotlight .modify {
+            width: 10%;
+        }
 
 			.spotlight .content > :last-child {
 				margin-bottom: 0;

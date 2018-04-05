@@ -41,11 +41,32 @@
                             <p>{{ site.description }}</p>
                         </div>
                     </a>
+
+                    {% if is_granted('ROLE_ADMIN') %}
+                   <div class="modify">
+                       <a href="{{ path('sites_edit', { 'id': site.id }) }}">
+                           <img src="{{ asset('assets/images/local/icons/edit.svg') }}" class="plus-icon">
+                       </a>
+                   </div>
+                    {% endif %}
+
                 </div>
 
             {% endfor %}
 
             {# FIN DE BOUCLE#}
+
+            {% if is_granted('ROLE_ADMIN') %}
+                <section class="special">
+                    <ul class="icons labeled">
+                        <li>
+                           <a href="{{ path('sites_new') }}">
+                               <img src="{{ asset('assets/images/local/icons/plus-icon.svg') }}" class="plus-icon">
+                           </a>
+                        </li>
+                    </ul>
+                </section>
+            {% endif %}
 
             <section class="special">
                 <ul class="icons labeled">

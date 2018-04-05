@@ -1,3 +1,7 @@
+a{
+    border-bottom: none;
+}
+
 .span-logo{
     color: darkviolet;
 }
@@ -20,6 +24,12 @@
 
 .horizontal-center{
     margin-left: 50%;
+    margin-top: 20px;
+}
+
+.horizontal-center-edit{
+    margin-left: 40%;
+    margin-top: 20px;
 }
 
 .button-spacing{
@@ -29,3 +39,7 @@
 .input-size{
     width: -moz-fit-content;
 }
+
+/*.special-right{*/
+    /*margin-left: 50%;*/
+/*}*/

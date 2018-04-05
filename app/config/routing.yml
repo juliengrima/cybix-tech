@@ -1,14 +1,15 @@
 app:
     resource: '@AppBundle/Controller/'
     type: annotation
+    methods:  [GET, POST]
 
 app_media:
     resource: "@AppBundle/Resources/config/routing/media.yml"
-    prefix:   admin/media
+    prefix:   /admin/media
 
 app_sites:
     resource: "@AppBundle/Resources/config/routing/sites.yml"
-    prefix:   admin/sites
+    prefix:   /admin/sites
 
 app_contact:
     path:     /contact
