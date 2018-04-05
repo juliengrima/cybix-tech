@@ -21,3 +21,11 @@
 .horizontal-center{
     margin-left: 50%;
 }
+
+.button-spacing{
+    margin-top: 50px;
+}
+
+.input-size{
+    width: -moz-fit-content;
+}
