@@ -7,16 +7,22 @@
 /* Spotlight */
 
 	.spotlight .image {
-		width: 25%;
+		width: 20%;
 		display: inline-block;
 		vertical-align: middle;
 	}
 
 	.spotlight .content {
-		width: 65%;
+		width: 60%;
 		display: inline-block;
 		vertical-align: middle;
 	}
+
+    .spotlight .modify {
+        width: 10%;
+        display: inline-block;
+        vertical-align: middle;
+    }
 
 	.spotlight:after {
 		content: '';
